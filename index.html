@@ -6,24 +6,35 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <body style="margin : 0px; overflow: hidden;">
         <a-scene embedded arjs vr-mode-ui="enabled: false">
-        <a-marker preset="kanji">
+        <a-marker type="pattern" url="patterns/prueba-kenji.patt">
             <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
             <a-entity
-            position="0 0 0"
-			rotation="0 0 0" animation="property: rotation; to: 0 0 360; loop: true; dur: 10000"
-            scale="0.001 0.001 0.001"
-            gltf-model="url(esfera_gltf/scene.gltf)"  
-			
+            position="2 -3 0"
+			rotation="-90 0 0" 
+            scale="4 4 4"
+            gltf-model="url(nefertitis/scene.gltf)"
+	   			
             ></a-entity>
         </a-marker>
 		
-		<a-marker preset="hiro">
+	<a-marker preset="hiro">
             <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
             <a-entity
-            position="0 0 0"
-			rotation="0 0 0" animation="property: rotation; to: 0 0 360; loop: true; dur: 10000"
-            scale="0.5 0.5 0.5"
-	        obj-model="obj: url(sphere/sphere.obj); mtl: url(sphere/sphere.mtl)"  
+             position="0 -0.05 0.5"
+	     rotation="0 90 -90" 
+             scale="9 9 9"
+	     obj-model="obj: url(shampoo1/Shampoo.obj); mtl: url(shampoo1/Shampoo.mtl)"   
+			
+             ></a-entity>
+        </a-marker>
+		
+	<a-marker type="pattern" url="patterns/pattern-JPG21.patt">
+            <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
+            <a-entity
+	    position="0 0 0"
+	    rotation="0 0 0" animation="property: rotation; to: 0 0 360; loop: true; dur: 10000"
+            scale="0.001 0.001 0.001"
+            gltf-model="url(esfera_gltf/scene.gltf)"  
 			
             ></a-entity>
         </a-marker>
