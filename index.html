@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+    <script src="aframe.min.js"></script>
+    <!-- we import arjs version without NFT but with marker + location based support -->
+    <script src="aframe-ar.js"></script>
+    <body>
+     
+<audio id = "stream" >
+
+</audio> 
+ 
+<script>
+
+function getLocalStream() {
+    
+    navigator.mediaDevices.getUserMedia({video: false, audio: true}).then( function(mediaStream) {
+		var stream = document.getElementById('stream');
+		//var stream = document.querySelector('audio');
+        stream.srcObject = mediaStream;
+        stream.play();
+    }).catch( err => {
+        console.log("u got an error:" + err)
+    });
+}
+
+getLocalStream();
+	
+</script>	
+		
+    </body>
+
+</html>
