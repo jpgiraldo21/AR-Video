@@ -12,10 +12,10 @@
 		<a-marker type="pattern" url="patterns/prueba-kenji.patt">
             <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
             <a-entity
-            position="2 -3 0"
-			rotation="-90 0 0" 
-            scale="4 4 4"
-            gltf-model="url(nefertitis/scene.gltf)"
+            position="0 0 0"
+	    rotation="0 0 0" animation="property: rotation; to: 0 0 360; loop: true; dur: 10000"
+	    scale="0.5 0.5 0.5"
+	    obj-model="obj: url(sphere/sphere.obj); mtl: url(sphere/sphere.mtl)" 
 	   			
             ></a-entity>
         </a-marker>
