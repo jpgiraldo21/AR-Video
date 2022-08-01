@@ -11,7 +11,7 @@
 	
 	<div style="position: fixed; top: 10px; width: 100%; text-align: center; z-index: 1;">
 	<button class="button1" id="btn1">Modelo 1</button>
-	<button class="button2" id="btn2">Modelo 2</button>
+	<button class="button2" id="btn2">Modelo 3</button>
 	</div>
 	
 	<body style="margin : 0px; overflow: hidden;">
@@ -49,9 +49,9 @@
 				 gesture-detector
 				 id="scene">
         
-		<a-marker preset="hiro"		  
+		<a-entity 		  
 		  raycaster="objects: .clickable"
-          emitevents="true"
+         
           cursor="fuse: false; rayOrigin: mouse;"
 		  id="markerA"
           >
@@ -65,7 +65,7 @@
 			 class="clickable"
            	 gesture-handler
             ></a-entity>
-        </a-marker>
+        </a-entity>
 		    
 		    <a-entity
 			 id="Entity2"
