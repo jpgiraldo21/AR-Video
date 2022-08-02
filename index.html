@@ -11,7 +11,7 @@
 	
 	<div style="position: fixed; top: 10px; width: 100%; text-align: center; z-index: 1;">
 	<button class="button1" id="btn1">Modelo 1</button>
-	<button class="button2" id="btn2">Modelo 3</button>
+	<button class="button2" id="btn2">Modelo 2</button>
 	</div>
 	
 	<body style="margin : 0px; overflow: hidden;">
@@ -60,7 +60,11 @@
             <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
             <a-entity
 			 id="Entity1"
-			 look-controls="magicWindowTrackingEnabled:false"             
+			 look-controls="magicWindowTrackingEnabled:false"  
+             position="0 0 -5"
+			 rotation="0 180 0"
+             scale="0.001 0.001 0.001"
+	         gltf-model="url(esfera_gltf/scene.gltf)"			 
 			 class="clickable"
            	 
             ></a-entity>
