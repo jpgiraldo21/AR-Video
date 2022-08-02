@@ -11,7 +11,7 @@
 	
 	<div style="position: fixed; top: 10px; width: 100%; text-align: center; z-index: 1;">
 	<button class="button1" id="btn1">Modelo 1</button>
-	<button class="button2" id="btn2">Modelo 2</button>
+	<button class="button2" id="btn2">Modelo 1</button>
 	</div>
 	
 	<body style="margin : 0px; overflow: hidden;">
@@ -54,38 +54,22 @@
 		  raycaster="objects: .clickable"
           cursor="fuse: false; rayOrigin: mouse;"
 		  id="markerA"
-		  
-		  
-          >
+		  >
             <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
             <a-entity
 			 id="Entity1"
 			 
              position="0 0 -5"
-			 rotation="180 180 0"
+			 rotation="0 0 0"
              scale="0.001 0.001 0.001"
-	         gltf-model="url(esfera_gltf/scene.gltf)"			 
+	         gltf-model="url(esfera_gltf/scene.gltf)"
+			 
 			 class="clickable"
            	 gesture-handler
             ></a-entity>
         </a-entity>
 		    
-		    <a-entity
-			 id="Entity2"
-			 raycaster="objects: .clickable"
-             cursor="fuse: false; rayOrigin: mouse"
-            
-			 position="0 0 -5"
-			 rotation="0 180 0"
-             
-             class="clickable"
-             gesture-handler
-             		
-	   			
-            ></a-entity>
-		    
-		
-		
+		    		
         <a-entity camera></a-entity>
         </a-scene>
     </body>
