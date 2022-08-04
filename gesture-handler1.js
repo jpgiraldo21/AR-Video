@@ -1,6 +1,6 @@
 /* global AFRAME, THREE */
 
-AFRAME.registerComponent("gesture-handler", {
+AFRAME.registerComponent("gesture-handler1", {
   schema: {
     enabled: { default: true },
     rotationFactor: { default: -5 }, // - es para cambiar la direccion de rotacion
