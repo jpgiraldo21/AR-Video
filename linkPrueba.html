@@ -11,25 +11,20 @@
 	
 	<div style="position: fixed; top: 10px; width: 100%; text-align: center; z-index: 1;">
 	<button class="button1" id="btn1">Modelo 1</button>
-	<button class="button2" id="btn2">Prueba Link</button>
+	<button class="button2" id="btn2">Modelo 2</button>
 	</div>
 	
 	<body style="margin : 0px; overflow: hidden;">
 	
 	    <script>
-		document.getElementById("btn2").addEventListener("click",(e)=>{
-		 location.href = "index.html";
-		})
-		document.getElementById("btn1").addEventListener("click",(e)=>{
-		  //var m = document.querySelector("#markerA");
-          //m.addEventListener("markerLost", (e)=>{
-          
-
-		     var Entity1 = document.querySelector("#Entity2");
-		     Entity1.setAttribute("gltf-model",'url(esfera_gltf/scene.gltf)');
-		     Entity1.setAttribute("scale",'0.001 0.001 0.001');
-		    //})
-		})
+		
+		 document.getElementById("btn2").addEventListener("click",(e)=>{
+		   location.href = "index.html";
+		   })
+		 document.getElementById("btn1").addEventListener("click",(e)=>{
+		   location.href = "linkPrueba.html";
+		   })  
+		 
 		</script>
 	
         <a-scene embedded 
@@ -48,10 +43,10 @@
             <a-entity
 			 id="Entity1"
 			 
-             position="0 0 -5"
-			 rotation="0 0 0"
-             scale="0.001 0.001 0.001"
-	         gltf-model="url(esfera_gltf/scene.gltf)"
+             position="0 -0.8 -5"
+	         rotation="0 0 0" 
+             scale="9 9 9"
+	         obj-model="obj: url(shampoo1/Shampoo.obj); mtl: url(shampoo1/Shampoo.mtl)"   
 			 
 			 class="clickable"
            	 gesture-handler
