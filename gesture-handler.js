@@ -3,7 +3,7 @@
 AFRAME.registerComponent("gesture-handler", {
   schema: {
     enabled: { default: true },
-    rotationFactor: { default: -5 }, // - es para cambiar la direccion de rotacion
+    rotationFactor: { default: 5 }, // - es para cambiar la direccion de rotacion
     minScale: { default: 0.3 },
     maxScale: { default: 8 },
   },
