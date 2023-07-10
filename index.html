@@ -8,6 +8,7 @@
 	<!--<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>-->
     <script src="gesture-detector.js"></script>
     <script src="gesture-handler.js"></script>
+	<script src="play-on-click.js"></script>
 	
 	
 	<body style="margin : 0px; overflow: hidden;">
@@ -17,6 +18,13 @@
 				 vr-mode-ui="enabled: false"
 				 gesture-detector
 				 id="scene">
+	    
+        <a-assets>
+          <video id="video1" 
+		    autoplay="true"
+			src="video-1.mp4"
+			></video>
+        </a-assets>
         
 		<a-marker preset="hiro"
 		  raycaster="objects: .clickable"
@@ -24,12 +32,12 @@
           cursor="fuse: false; rayOrigin: mouse;"
           id="markerA">
 
-		  <a-video src="video-1.mp4" 
+		  <a-video src="#video1" 
 		    width="2" 
 			height="2"
 			position="0 0 0"
 	        rotation="-90 0 0"
-            autoplay 			
+		    play-on-click			
 			>
 		  </a-video>
 			
