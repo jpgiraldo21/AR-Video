@@ -10,7 +10,6 @@
     <script src="gesture-handler.js"></script>
 	<script src="play-on-click.js"></script>
 	
-	
 	<body style="margin : 0px; overflow: hidden;">
         <a-scene embedded 
 		         arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
@@ -20,10 +19,9 @@
 				 id="scene">
 	    
         <a-assets>
-          <video id="video1" 
-		    autoplay="true"
-			src="video-1.mp4"
-			></video>
+          <video id="video1" preload="true"> 
+		    <source src="video-1.mp4" type="video/mp4"> 
+		  </video>
         </a-assets>
         
 		<a-marker preset="hiro"
@@ -32,19 +30,22 @@
           cursor="fuse: false; rayOrigin: mouse;"
           id="markerA">
 
-		  <a-video src="#video1" 
-		    width="2" 
-			height="2"
+		  <a-entity  
+		    geometry="primitive: plane; width: 1; height: 1"
+			material="shader: flat; src: #video1"
 			position="0 0 0"
-	        rotation="-90 0 0"
-		    play-on-click			
+	        rotation="-90 0 0"	
+            play-on-click			
 			>
-		  </a-video>
+		  </a-entity>
 			
         </a-marker>
 				
         <a-entity camera></a-entity>
         </a-scene>
+	
+   	
+		
     </body>
 
 </html>
