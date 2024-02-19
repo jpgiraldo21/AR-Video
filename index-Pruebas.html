@@ -1,0 +1,189 @@
+ <!DOCTYPE html>
+ <html lang="en">
+
+ <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Sound Booster</title>
+	<link rel="canonical" href="https://jpgiraldo21.github.io/SoundBooster/" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Icons and Colors -->
+	<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" style="background-color: rgb(21, 86, 64);" href="./favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" style="background-color: rgb(21, 86, 64);" href="./favicon-16x16.png">
+	<link rel="manifest" href="./manifest.json">
+	<link rel="mask-icon" href="./safari-pinned-tab.svg" color="#000000">
+	<link rel="shortcut icon" href="./favicon.ico">
+	<meta name="msapplication-TileColor" content="#000000">
+	<meta name="msapplication-TileImage" content="./mstile-144x144.png">
+	<meta name="msapplication-config" content="./browserconfig.xml">
+	<meta name="theme-color" content="#000000">
+	
+	<!-- SEO and Social Sharing and SEO -->
+	<meta name="description" content="Amplificador de Sonido Ambiente Sound Booster" />
+	<meta name="robots" content="noodp" />
+	<meta name="author" content="JPGiraldo">
+	<meta name="keywords" content="sound booster web app, sound booster web application, sound booster web app, sound booster web application, sound booster app, basic sound booster web app, basic sound booster web application, basic sound booster, sound booster, soundbooster, free sound booster web application, sound booster web app free, sound booster web app free download" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Sound Booster Web App" />
+	<meta property="og:description" content="Amplificador de Sonido Ambiente Sound Booster" />
+	<meta property="og:url" content="https://jpgiraldo21.github.io/SoundBooster/" />
+	<meta property="og:site_name" content="Sound Booster Web App" />
+	<meta property="section:publisher" content="https://www.facebook.com/simplepwa/" />
+	<meta property="og:image" content="https://jpgiraldo21.github.io/SoundBooster/share.jpg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Sound Booster Web App" />
+	<meta name="twitter:description" content="Amplificador de Sonido Ambiente Sound Booster" />
+	<meta name="twitter:site" content="@simplepwa" />
+	<meta name="twitter:image" content="https://jpgiraldo21.github.io/SoundBooster/share.jpg" />
+	<meta name="twitter:creator" content="@nicolemfurlan" />
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="style.css">
+
+	<!-- Javscript -->
+	<script>
+		if ("serviceWorker" in navigator) {
+			window.addEventListener("load", () => {
+				navigator.serviceWorker && navigator.serviceWorker.register("./sw.js");
+			});
+		}
+	</script>
+	<script defer src="./main.js"></script>
+	<script>
+		if ('serviceWorker' in navigator && 'PushManager' in window) {
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+
+            const deferredPrompt = e;
+
+            const installButton = document.createElement('button');
+            installButton.textContent = 'Install Sound Booster';
+            installButton.style.position = 'fixed';
+            installButton.style.top = '1%';
+            installButton.style.left = '1%';
+            //installButton.style.transform = 'translateX(-50%)';
+            installButton.style.zIndex = '9999';
+            installButton.style.padding = '10px 20px';
+            installButton.classList.add('btn-grad');
+            installButton.style.color = 'black';
+            installButton.style.border = 'none';
+            installButton.style.borderRadius = '3px';
+            installButton.style.cursor = 'pointer';
+
+            installButton.addEventListener('click', () => {
+
+                deferredPrompt.prompt();
+
+                deferredPrompt.userChoice.then(choiceResult => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('App installed');
+                    } else {
+                        console.log('App installation declined');
+                    }
+
+                    installButton.style.display = 'none';
+                });
+            });
+
+            document.body.appendChild(installButton);
+        });
+    }
+	</script>
+ </head>
+
+ <body>
+
+	<header>
+		<div class="container">
+			<a class="logo" aria-label="Logo">
+				<img src="logo.png" alt="Logo">
+			</a>
+						
+			<audio id = "stream">
+
+			</audio>
+			<div class="button">
+			<button onclick="getLocalStream()" type="button">&#9654; Play Audio</button>
+			<button onclick="pauseAudio()" type="button">&#10074;&#10074; Pause Audio</button> 
+			</div> 
+			<script>
+			
+			function getLocalStream() {
+				
+				device = navigator.mediaDevices.enumerateDevices();
+				/*device.then(response => {
+				response1 = JSON.stringify(response);
+				console.log(response1);
+                document.getElementById("pruebadevice1").innerHTML = response[0]["kind"];
+				document.getElementById("pruebadevice2").innerHTML = response[1]["kind"];
+                 }).catch(err => {
+                 console.log(err); // 👉️ "Something went wrong"
+                 });
+                */
+                
+				async function example() {
+                  try {
+                    const value = await device;
+                    console.log(value); // 👉️ "Hello World"
+					document.getElementById("pruebadevice1").innerHTML = value[0]["kind"];
+                  } catch (err) {
+                    console.log(err);
+                  }
+                 }
+
+                example();
+                 
+				console.log(device);
+				
+                //navigator.mediaDevices.getUserMedia({video: false, audio:{ deviceId: { exact: "0"}}});					//navigator.mediaDevices.getUserMedia({video: false, audio: {deviceId:{exact: inputDevices[MediaDeviceInfo]}}}).then( function(mediaStream) {	
+					
+					//var stream = document.getElementById('stream');
+					//var stream = document.querySelector('audio');- este no activar
+					//stream.srcObject = mediaStream;
+					//stream.play();
+				//}).catch( err => {
+				//	console.log("u got an error:" + err)
+				//});
+			}
+			function pauseAudio() { 
+			  stream.pause(); 
+			} 
+			//getLocalStream();
+				
+			</script>
+            
+		</div>
+	</header>
+
+	<section>
+		<p id="pruebadevice1"></p>
+		<p id="pruebadevice2"></p>
+		<div class="container">
+			<h1>Aumente su capacidad auditiva con Sound Booster</h1>
+			<h2 id="what">Que es Sound Booster?</h2>
+			<p>Sound Booster es una PWA (Progressive Web App) capaz de amplificar los sonidos de 
+			   su entorno por medio del microfono de su celular o dispositivo bluetooth. 
+			</p>			
+			
+			<h2 class="help">Cómo funciona Sound Booster?</h2>
+			
+		    <ol>
+				<li>Solo instale la aplicación en su celular</li>
+				<li>Conecte los audífonos a su celular, en lo posible sin micrófono</li>
+				<li>Pulse el botón "Play Audio" y regule el volumen</li>
+			</ol>
+		</div>
+	</section>
+
+	<footer>
+		<!--<div class="container">
+			<p><span class="icon heart" role="img" aria-label="Heart" style="font-size:36px;">&#11123;</span></p>
+		</div>-->
+	</footer>
+
+ </body>
+
+ </html>
