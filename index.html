@@ -19,6 +19,13 @@
     </audio>
   </body>
   <script>
+navigator.mediaDevices.getUserMedia({ audio: true })
+  .then(stream => {
+
+    // Set up audio context
+   window.AudioContext = window.AudioContext || window.webkitAudioContext;
+   const audioContext = new AudioContext();
+   let micStream = audioContext.createMediaStreamSource(stream);
 
     let canvas = document.querySelector("canvas");
     let audio = document.querySelector("audio");
@@ -27,7 +34,7 @@
     canvas.width = window.innerWidth * 0.8;
     canvas.height = window.innerHeight * 0.8;
 
-    let wave = new Wave(audio, canvas);
+    let wave = new Wave(micStream, canvas);
 
     /*
     Wave, Cubes, Circles, Glob, Shine, Square, Arcs.
@@ -35,7 +42,7 @@
     wave.addAnimation(
       new wave.animations.Cubes({
         top: false,
-        count: 100,
+        count: 60,
         cubeHeight: 10,
         fillColor: "#FFFFFF",
         lineColor: "rgba(0,0,0,0)",
@@ -51,6 +58,6 @@
         frequencyBand: "base",
       })
     );
-    
+  });  
   </script>
 </html>
