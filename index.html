@@ -15,26 +15,19 @@
   <body>
     <canvas></canvas>
     <audio controls>
-      
+      <source src="./TOOL.mp3" />
     </audio>
   </body>
   <script>
-navigator.mediaDevices.getUserMedia({ audio: true })
-  .then(stream => {
-  /*document.querySelector('button').addEventListener('click', function() {*/
-    
-					
 
     let canvas = document.querySelector("canvas");
     let audio = document.querySelector("audio");
 
-    audio.srcObject = stream;
-		
-
+    
     canvas.width = window.innerWidth * 0.8;
     canvas.height = window.innerHeight * 0.8;
 
-    let wave = new Wave(stream, canvas);
+    let wave = new Wave(audio, canvas);
 
     /*
     Wave, Cubes, Circles, Glob, Shine, Square, Arcs.
@@ -58,6 +51,6 @@ navigator.mediaDevices.getUserMedia({ audio: true })
         frequencyBand: "base",
       })
     );
-    });
+    
   </script>
 </html>
