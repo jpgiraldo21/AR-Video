@@ -15,20 +15,21 @@
   <body>
     <canvas></canvas>
     <audio controls>
-      
+      <source src="./TOOL.mp3" />
     </audio>
   </body>
   <script>
 navigator.mediaDevices.getUserMedia({ audio: true })
   .then(stream => {
-  /*document.querySelector('button').addEventListener('click', function() { <source src="./TOOL.mp3" />*/
+  /*document.querySelector('button').addEventListener('click', function() {*/
     
-					var stream1 = document.querySelector('audio');
-					stream1.srcObject = stream;
-					stream1.play();
+					
 
     let canvas = document.querySelector("canvas");
     let audio = document.querySelector("audio");
+
+    audio.srcObject = stream;
+		
 
     canvas.width = window.innerWidth * 0.8;
     canvas.height = window.innerHeight * 0.8;
