@@ -34,7 +34,7 @@ navigator.mediaDevices.getUserMedia({ audio: true })
     canvas.width = window.innerWidth * 0.8;
     canvas.height = window.innerHeight * 0.8;
 
-    let wave = new Wave(audio, canvas);
+    let wave = new Wave(stream, canvas);
 
     /*
     Wave, Cubes, Circles, Glob, Shine, Square, Arcs.
