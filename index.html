@@ -31,18 +31,8 @@
     Wave, Cubes, Circles, Glob, Shine, Square, Arcs.
     */
     wave.addAnimation(
-      new wave.animations.Wave({
-        lineColor: "white",
-        lineWidth: 10,
-        fillColor: { gradient: ["#FF9A8B", "#FF7A88", "#FF99AC"] },
-        mirroredX: true,
-        count: 5,
-        frequencyBand: "base",
-      })
-    );
-    wave.addAnimation(
       new wave.animations.Cubes({
-        top: true,
+        top: false,
         count: 60,
         cubeHeight: 10,
         fillColor: "#FFFFFF",
